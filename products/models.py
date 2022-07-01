@@ -7,7 +7,7 @@ from django.db.models.deletion import SET_DEFAULT, SET_NULL
 
 
 class Product(models.Model):
-    image = models.ImageField(upload_to ='uploads/image')
+    image = models.ImageField(upload_to ='uploads/image' )
     name = models.CharField(max_length=255,null= False, blank= False)
     price = models.DecimalField(max_digits=6, decimal_places=2,null= False, blank= False)
     description =models.TextField()

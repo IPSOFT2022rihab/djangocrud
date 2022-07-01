@@ -6,10 +6,14 @@ from rest_framework.views import APIView
 from django.views.generic import TemplateView
 from rest_framework import status
 from django.db import connection
-# Create your views here.
-class ProductView(generics.ListAPIView):
+
+
+class ProductView(generics.RetrieveUpdateDestroyAPIView):
       queryset = Product.objects.all()
       serializer_class = ProductSerializer
 
+class ProductAdd(generics.ListCreateAPIView):
+  queryset=Product.objects.all()
+  serializer_class=ProductSerializer
 
 
